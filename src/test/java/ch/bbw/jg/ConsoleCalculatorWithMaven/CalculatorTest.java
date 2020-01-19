@@ -2,6 +2,8 @@ package ch.bbw.jg.ConsoleCalculatorWithMaven;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
+
 /**
  * 
  * @author Joel Galli
@@ -13,20 +15,23 @@ import org.junit.Test;
 
 public class CalculatorTest {
 
-	Calculator testCalculator;
+	private Calculator testCalculator;
+	
+	@Before
+	public void setup() {
+		testCalculator = new Calculator();
+	}
 	
 	int int1 = 10;
 	int int2 = 20;
 
 	@Test
 	public void testSumOfTwoPositiveIsOk() {
-		testCalculator = new Calculator();
 		assertTrue(testCalculator.sum(int1, int2) == 30);
 	}
 	
 	@Test
 	public void testSubstrOfTwoPositiveIsOk() {
-		testCalculator = new Calculator();
 		assertTrue(testCalculator.subtr(int1, int2) == -10);
 	}
 	
@@ -35,13 +40,11 @@ public class CalculatorTest {
 	
 	@Test
 	public void testSumOfTwoNegativeIsOk() {
-		testCalculator = new Calculator();
 		assertTrue(testCalculator.sum(int1Neg, int2Neg) == -30);
 	}
 	
 	@Test
 	public void testSubstrOfTwoNegativeIsOk() {
-		testCalculator = new Calculator();
 		assertTrue(testCalculator.subtr(int1Neg, int2Neg) == 10);
 	}
 }
