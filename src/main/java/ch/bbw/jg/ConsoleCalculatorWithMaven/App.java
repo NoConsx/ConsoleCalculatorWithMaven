@@ -24,5 +24,9 @@ public class App
        valueB = 20;
        
        System.out.println("Sum "  + valueA + " + " + valueB + " = " + calculator.sum(valueA, valueB));
+       System.out.println("========================================================================");
+       System.out.println("");
+       System.out.println("========================================================================");
+       System.out.println("Difference "  + valueA + " - " + valueB + " = " + calculator.subtr(valueA, valueB));
     }
 }

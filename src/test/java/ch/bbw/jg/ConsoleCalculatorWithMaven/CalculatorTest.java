@@ -27,7 +27,7 @@ public class CalculatorTest {
 	@Test
 	public void testSubstrOfTwoPositiveIsOk() {
 		testCalculator = new Calculator();
-		assertTrue(testCalculator.subtr(int2, int1) == 10);
+		assertTrue(testCalculator.subtr(int1, int2) == -10);
 	}
 
 }
