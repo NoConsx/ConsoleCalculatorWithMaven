@@ -13,4 +13,8 @@ public class Calculator {
 		return sum1 + sum2;
 	}
 
+	public int subtr(int val1, int val2) {
+		return val1 - val2;
+	}
+	
 }
