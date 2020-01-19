@@ -29,5 +29,13 @@ public class CalculatorTest {
 		testCalculator = new Calculator();
 		assertTrue(testCalculator.subtr(int1, int2) == -10);
 	}
-
+	
+	int int1Neg = -10;
+	int int2Neg = -20;
+	
+	@Test
+	public void testSumOfTwoNegativeIsOk() {
+		testCalculator = new Calculator();
+		assertTrue(testCalculator.sum(int1Neg, int2Neg) == -30);
+	}
 }
