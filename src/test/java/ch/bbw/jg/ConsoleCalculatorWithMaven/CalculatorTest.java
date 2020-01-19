@@ -38,4 +38,10 @@ public class CalculatorTest {
 		testCalculator = new Calculator();
 		assertTrue(testCalculator.sum(int1Neg, int2Neg) == -30);
 	}
+	
+	@Test
+	public void testSubstrOfTwoNegativeIsOk() {
+		testCalculator = new Calculator();
+		assertTrue(testCalculator.subtr(int1Neg, int2Neg) == 10);
+	}
 }
