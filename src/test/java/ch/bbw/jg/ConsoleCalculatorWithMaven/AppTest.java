@@ -1,12 +1,17 @@
 package ch.bbw.jg.ConsoleCalculatorWithMaven;
 
 import junit.framework.Test;
+
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * Unit test for simple App.
+ * 
+ * @author Joel Galli
+ * @version 19.01.2020
+ *
  */
+
 public class AppTest 
     extends TestCase
 {
