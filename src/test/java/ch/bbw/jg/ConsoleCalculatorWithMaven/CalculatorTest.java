@@ -52,7 +52,10 @@ public class CalculatorTest {
 		assertTrue(testCalculator.sum(int1Neg, int1Pos) == 0);
 	}
 
-
+	@Test
+	public void testSumOfOnePositiveOneNegativeIsOk() {
+		assertTrue(testCalculator.sum(int1Pos, int1Neg) == 0);
+	}
 
 	/**
 	 * Test public method subtr
