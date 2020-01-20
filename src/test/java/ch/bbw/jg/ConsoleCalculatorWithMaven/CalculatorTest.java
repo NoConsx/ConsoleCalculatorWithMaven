@@ -41,10 +41,10 @@ public class CalculatorTest {
 	public void testSumOfTwoPositiveIsOk() {
 		assertTrue(testCalculator.sum(int1Pos, int2Pos) == 30);
 	}
-
+	
 	@Test
-	public void testSubtrOfTwoPositiveIsOk() {
-		assertTrue(testCalculator.subtr(int1Pos, int2Pos) == -10);
+	public void testSumOfTwoNegativeIsOk() {
+		assertTrue(testCalculator.sum(int1Neg, int2Neg) == -30);
 	}
 
 	/**
@@ -52,8 +52,8 @@ public class CalculatorTest {
 	 */
 
 	@Test
-	public void testSumOfTwoNegativeIsOk() {
-		assertTrue(testCalculator.sum(int1Neg, int2Neg) == -30);
+	public void testSubtrOfTwoPositiveIsOk() {
+		assertTrue(testCalculator.subtr(int1Pos, int2Pos) == -10);
 	}
 
 	@Test
