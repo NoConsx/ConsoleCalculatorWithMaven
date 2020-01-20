@@ -16,35 +16,48 @@ import org.junit.Test;
 public class CalculatorTest {
 
 	private Calculator testCalculator;
-	
+
 	@Before
 	public void setup() {
 		testCalculator = new Calculator();
 	}
-	
-	int int1 = 10;
-	int int2 = 20;
+
+	int int1Pos = 10;
+	int int2Pos = 20;
+
+	int int1Neg = -10;
+	int int2Neg = -20;
+
+	int intZero = 0;
 
 	@Test
 	public void testSumOfTwoPositiveIsOk() {
-		assertTrue(testCalculator.sum(int1, int2) == 30);
+		assertTrue(testCalculator.sum(int1Pos, int2Pos) == 30);
 	}
-	
+
 	@Test
-	public void testSubstrOfTwoPositiveIsOk() {
-		assertTrue(testCalculator.subtr(int1, int2) == -10);
+	public void testSubtrOfTwoPositiveIsOk() {
+		assertTrue(testCalculator.subtr(int1Pos, int2Pos) == -10);
 	}
-	
-	int int1Neg = -10;
-	int int2Neg = -20;
-	
+
 	@Test
 	public void testSumOfTwoNegativeIsOk() {
 		assertTrue(testCalculator.sum(int1Neg, int2Neg) == -30);
 	}
-	
+
 	@Test
-	public void testSubstrOfTwoNegativeIsOk() {
+	public void testSubtrOfTwoNegativeIsOk() {
 		assertTrue(testCalculator.subtr(int1Neg, int2Neg) == 10);
 	}
+
+	@Test(expected = ArithmeticException.class)
+	public void testDivOfPositiveByZeroThrowsExpectArithmethicException() {
+		testCalculator.div(int1Pos, intZero);
+	}
+
+	@Test
+	public void testDivOfPositiveByPositiveUnexpectArithmethicException() throws java.lang.ArithmeticException {
+		testCalculator.div(int1Pos, int2Pos);
+	}
+
 }

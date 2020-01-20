@@ -16,4 +16,8 @@ public class Calculator {
 	public int subtr(int val1, int val2) {
 		return val1 - val2;
 	}
+
+	public int div(int val1, int val2) {
+		return val1 / val2;
+	}
 }
