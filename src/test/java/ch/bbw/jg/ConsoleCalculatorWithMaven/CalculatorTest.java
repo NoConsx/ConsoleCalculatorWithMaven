@@ -66,6 +66,11 @@ public class CalculatorTest {
 	public void testSumOfZeroAndPositiveIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(intZero, int1Pos) == 10);
 	}
+	
+	@Test
+	public void testSumMaxAndMinIsOk() {
+		assertTrue(testCalculator.sum(Integer.MAX_VALUE, Integer.MIN_VALUE) == -1);
+	}
 
 
 	/**
