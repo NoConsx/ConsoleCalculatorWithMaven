@@ -73,7 +73,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void testSumMaxAndMinIsOk() {
+	public void testSumMaxAndMinIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(Integer.MAX_VALUE, Integer.MIN_VALUE) == -1);
 	}
 
@@ -105,7 +105,6 @@ public class CalculatorTest {
 	public void testSubrtMaxOfMaxGivesException() {
 		assertTrue(testCalculator.subtr(Integer.MAX_VALUE, Integer.MAX_VALUE) != 0);
 	}
-
 
 	/**
 	 * Test public method div
