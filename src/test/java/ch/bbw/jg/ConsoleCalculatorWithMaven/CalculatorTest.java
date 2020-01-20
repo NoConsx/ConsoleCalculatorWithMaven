@@ -90,6 +90,17 @@ public class CalculatorTest {
 	public void testSubtrOfTwoNegativeIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.subtr(int1Neg, int2Neg) == 10);
 	}
+	
+	@Test
+	public void testSubtrOfOnePositiveAndOneNegativeIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.subtr(int1Pos, int1Neg) == 20);
+	}
+	
+	@Test
+	public void testSubtrOfOneNegativeAndOnePositiveIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.subtr(int1Neg, int1Pos) == -20);
+	}
+
 
 	/**
 	 * Test public method div
