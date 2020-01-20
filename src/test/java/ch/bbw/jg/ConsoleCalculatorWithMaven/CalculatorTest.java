@@ -38,13 +38,43 @@ public class CalculatorTest {
 	 */
 
 	@Test
-	public void testSumOfTwoPositiveIsOk() {
+	public void testSumOfTwoPositiveIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(int1Pos, int2Pos) == 30);
+	}
+	
+	@Test
+	public void testSumOfTwoNegativeIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.sum(int1Neg, int2Neg) == -30);
+	}
+	
+	@Test
+	public void testSumOfOneNegativeOnePositiveIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.sum(int1Neg, int1Pos) == 0);
 	}
 
 	@Test
-	public void testSubtrOfTwoPositiveIsOk() {
-		assertTrue(testCalculator.subtr(int1Pos, int2Pos) == -10);
+	public void testSumOfOnePositiveOneNegativeIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.sum(int1Pos, int1Neg) == 0);
+	}
+	
+	@Test
+	public void testSumOfZeroAndNegativeIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.sum(intZero, int1Neg) == -10);
+	}
+	
+	@Test
+	public void testSumOfZeroAndPositiveIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.sum(intZero, int1Pos) == 10);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testSumMaxAndMaxGivesException() {
+		assertTrue(testCalculator.sum(Integer.MAX_VALUE, Integer.MAX_VALUE) == 1200);
+	}
+	
+	@Test
+	public void testSumMaxAndMinIsOk() {
+		assertTrue(testCalculator.sum(Integer.MAX_VALUE, Integer.MIN_VALUE) == -1);
 	}
 
 	/**
@@ -52,12 +82,12 @@ public class CalculatorTest {
 	 */
 
 	@Test
-	public void testSumOfTwoNegativeIsOk() {
-		assertTrue(testCalculator.sum(int1Neg, int2Neg) == -30);
+	public void testSubtrOfTwoPositiveIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.subtr(int1Pos, int2Pos) == -10);
 	}
 
 	@Test
-	public void testSubtrOfTwoNegativeIsOk() {
+	public void testSubtrOfTwoNegativeIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.subtr(int1Neg, int2Neg) == 10);
 	}
 
@@ -89,7 +119,7 @@ public class CalculatorTest {
 	 */
 
 	@Test
-	public void testPackageProtectedMultMethodWithPositive() {
+	public void testPackageProtectedMultMethodWithPositive() throws ArithmeticException {
 		testCalculator.mult(int1Pos, int2Pos);
 	}
 
