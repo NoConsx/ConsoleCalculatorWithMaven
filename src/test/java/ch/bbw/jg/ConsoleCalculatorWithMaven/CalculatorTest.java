@@ -134,6 +134,11 @@ public class CalculatorTest {
 	public void testDivOfNegativeByZeroThrowsExpectedArithmethicException() {
 		testCalculator.div(int1Neg, intZero);
 	}
+	
+	@Test(expected = ArithmeticException.class)
+	public void testDivOfZeroByZeroThrowsExpectedArithmethicException() {
+		testCalculator.div(intZero, intZero);
+	}
 
 	@Test
 	public void testDivOfPositiveByPositiveUnexpectArithmethicException() throws ArithmeticException {
