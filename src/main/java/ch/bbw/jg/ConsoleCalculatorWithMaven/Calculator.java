@@ -28,4 +28,8 @@ public class Calculator {
 	int mult(int val1, int val2) {
 		return Math.multiplyExact(val1, val2);
 	}
+
+	private double pow(double val1, double val2) {
+		return Math.pow(val1, val2);
+	}
 }
