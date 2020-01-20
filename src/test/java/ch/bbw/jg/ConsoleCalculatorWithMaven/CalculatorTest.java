@@ -67,11 +67,15 @@ public class CalculatorTest {
 		assertTrue(testCalculator.sum(intZero, int1Pos) == 10);
 	}
 	
+	@Test(expected = AssertionError.class)
+	public void testSumMaxAndMaxGivesException() {
+		assertTrue(testCalculator.sum(Integer.MAX_VALUE, Integer.MAX_VALUE) == 1200);
+	}
+	
 	@Test
 	public void testSumMaxAndMinIsOk() {
 		assertTrue(testCalculator.sum(Integer.MAX_VALUE, Integer.MIN_VALUE) == -1);
 	}
-
 
 	/**
 	 * Test public method subtr
