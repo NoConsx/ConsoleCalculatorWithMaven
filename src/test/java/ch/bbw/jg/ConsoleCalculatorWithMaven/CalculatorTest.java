@@ -105,6 +105,16 @@ public class CalculatorTest {
 	public void testSubrtMaxOfMaxGivesException() {
 		assertTrue(testCalculator.subtr(Integer.MAX_VALUE, Integer.MAX_VALUE) != 0);
 	}
+	
+	@Test
+	public void testSubtrZeroOfZeroIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.subtr(intZero, intZero) == 0);
+	}
+	
+	@Test
+	public void testSubtrZeroOfNegativeIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.subtr(int1Neg, intZero) == -10);
+	}
 
 	/**
 	 * Test public method div
