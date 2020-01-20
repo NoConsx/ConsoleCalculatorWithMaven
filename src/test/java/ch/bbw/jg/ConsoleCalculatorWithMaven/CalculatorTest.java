@@ -38,22 +38,22 @@ public class CalculatorTest {
 	 */
 
 	@Test
-	public void testSumOfTwoPositiveIsOk() {
+	public void testSumOfTwoPositiveIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(int1Pos, int2Pos) == 30);
 	}
 	
 	@Test
-	public void testSumOfTwoNegativeIsOk() {
+	public void testSumOfTwoNegativeIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(int1Neg, int2Neg) == -30);
 	}
 	
 	@Test
-	public void testSumOfOneNegativeOnePositiveIsOk() {
+	public void testSumOfOneNegativeOnePositiveIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(int1Neg, int1Pos) == 0);
 	}
 
 	@Test
-	public void testSumOfOnePositiveOneNegativeIsOk() {
+	public void testSumOfOnePositiveOneNegativeIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(int1Pos, int1Neg) == 0);
 	}
 
@@ -62,12 +62,12 @@ public class CalculatorTest {
 	 */
 
 	@Test
-	public void testSubtrOfTwoPositiveIsOk() {
+	public void testSubtrOfTwoPositiveIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.subtr(int1Pos, int2Pos) == -10);
 	}
 
 	@Test
-	public void testSubtrOfTwoNegativeIsOk() {
+	public void testSubtrOfTwoNegativeIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.subtr(int1Neg, int2Neg) == 10);
 	}
 
@@ -99,7 +99,7 @@ public class CalculatorTest {
 	 */
 
 	@Test
-	public void testPackageProtectedMultMethodWithPositive() {
+	public void testPackageProtectedMultMethodWithPositive() throws ArithmeticException {
 		testCalculator.mult(int1Pos, int2Pos);
 	}
 
