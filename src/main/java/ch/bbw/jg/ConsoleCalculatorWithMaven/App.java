@@ -43,5 +43,17 @@ public class App
        System.out.println("Difference "  + valueA + " - " + valueB + " = " + calculator.subtr(valueA, valueB));
        System.out.println("========================================================================");
        System.out.println("");
+       
+       valueA = 10;
+       valueB = 0;
+       
+       System.out.println("========================================================================");
+       System.out.println("Div "  + valueA + " + " + valueB + " = " + calculator.div(valueA, valueB));
+       System.out.println("========================================================================");
+       System.out.println("");
+       System.out.println("========================================================================");
+       System.out.println("Div "  + valueA + " - " + valueB + " = " + calculator.div(valueA, valueB));
+       System.out.println("========================================================================");
+       System.out.println("");
     }
 }
