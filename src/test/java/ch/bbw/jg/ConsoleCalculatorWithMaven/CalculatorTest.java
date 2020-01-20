@@ -56,6 +56,17 @@ public class CalculatorTest {
 	public void testSumOfOnePositiveOneNegativeIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(int1Pos, int1Neg) == 0);
 	}
+	
+	@Test
+	public void testSumOfZeroAndNegativeIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.sum(intZero, int1Neg) == -10);
+	}
+	
+	@Test
+	public void testSumOfZeroAndPositiveIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.sum(intZero, int1Pos) == 10);
+	}
+
 
 	/**
 	 * Test public method subtr
