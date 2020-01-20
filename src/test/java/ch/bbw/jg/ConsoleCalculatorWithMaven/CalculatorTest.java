@@ -144,6 +144,11 @@ public class CalculatorTest {
 	public void testDivOfPositiveByPositiveUnexpectArithmethicException() throws ArithmeticException {
 		testCalculator.div(int1Pos, int2Pos);
 	}
+	
+	@Test
+	public void testDivONegativeByNegativeisOk() throws ArithmeticException {
+		testCalculator.div(int2Neg, int1Neg);
+	}
 
 	/**
 	 * Test protected method sqrt
