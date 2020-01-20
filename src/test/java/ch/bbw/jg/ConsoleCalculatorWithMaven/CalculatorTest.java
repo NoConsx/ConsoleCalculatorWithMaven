@@ -100,6 +100,11 @@ public class CalculatorTest {
 	public void testSubtrOfOneNegativeAndOnePositiveIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.subtr(int1Neg, int1Pos) == -20);
 	}
+	
+	@Test(expected = AssertionError.class)
+	public void testSubrtMaxOfMaxGivesException() {
+		assertTrue(testCalculator.subtr(Integer.MAX_VALUE, Integer.MAX_VALUE) != 0);
+	}
 
 
 	/**
