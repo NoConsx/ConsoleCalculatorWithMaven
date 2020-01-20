@@ -29,11 +29,11 @@ public class CalculatorTest {
 	int int2Neg = -20;
 
 	int intZero = 0;
-	
+
 	/**
 	 * Test public method sum
 	 */
-			
+
 	@Test
 	public void testSumOfTwoPositiveIsOk() {
 		assertTrue(testCalculator.sum(int1Pos, int2Pos) == 30);
@@ -43,11 +43,11 @@ public class CalculatorTest {
 	public void testSubtrOfTwoPositiveIsOk() {
 		assertTrue(testCalculator.subtr(int1Pos, int2Pos) == -10);
 	}
-	
+
 	/**
 	 * Test public method subtr
 	 */
-	
+
 	@Test
 	public void testSumOfTwoNegativeIsOk() {
 		assertTrue(testCalculator.sum(int1Neg, int2Neg) == -30);
@@ -61,7 +61,7 @@ public class CalculatorTest {
 	/**
 	 * Test public method div
 	 */
-	
+
 	@Test(expected = ArithmeticException.class)
 	public void testDivOfPositiveByZeroThrowsExpectArithmethicException() {
 		testCalculator.div(int1Pos, intZero);
@@ -75,10 +75,18 @@ public class CalculatorTest {
 	/**
 	 * Test protected method sqrt
 	 */
-	
+
 	@Test
 	public void testProtectedMethodWithPositive() {
 		testCalculator.sqrt(int1Pos);
 	}
 
+	/**
+	 * Test package protected method mult
+	 */
+
+	@Test
+	public void testPackageProtectedMultMethodWithPositive() {
+		testCalculator.mult(int1Pos, int2Pos);
+	}
 }
