@@ -77,7 +77,7 @@ public class CalculatorTest {
 	 */
 	
 	@Test
-	public void testProtectedSumOfOnePositiveAndOneNegative() {
+	public void testProtectedMethodWithPositive() {
 		testCalculator.sqrt(int1Pos);
 	}
 
