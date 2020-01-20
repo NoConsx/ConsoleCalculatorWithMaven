@@ -56,5 +56,10 @@ public class App
        System.out.println("Div "  + valueA + " / " + valueB + " = " + calculator.div(valueA, valueB));
        System.out.println("========================================================================");
        System.out.println("");
+       
+       System.out.println("========================================================================");
+       System.out.println("Sqrt "  + valueA + " = " + calculator.sqrt(valueA));
+       System.out.println("========================================================================");
+       System.out.println("");
     }
 }
