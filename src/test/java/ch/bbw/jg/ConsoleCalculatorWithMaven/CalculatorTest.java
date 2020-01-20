@@ -152,12 +152,17 @@ public class CalculatorTest {
 	
 	@Test
 	public void testDivMAXAndPositiveIsOk() {
-		assertTrue(testCalculator.div(Integer.MAX_VALUE, 100) == 21474826);
+		assertTrue(testCalculator.div(Integer.MAX_VALUE, 1) == 2147483647);
 	}
 	
 	@Test
-	public void testDivMAXAndnegativeIsOk() {
-		assertTrue(testCalculator.div(Integer.MAX_VALUE, -100) == -21474826);
+	public void testDivMAXAndNegativeIsOk() {
+		assertTrue(testCalculator.div(Integer.MAX_VALUE, -1) == -2147483647);
+	}
+	
+	@Test
+	public void testDivPositiveAndNegativeIsOk() {
+		assertTrue(testCalculator.div(int1Pos, int1Neg ) == -1);
 	}
 
 	/**
