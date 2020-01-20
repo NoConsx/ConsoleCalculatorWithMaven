@@ -73,7 +73,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void testSumMaxAndMinIsOk() {
+	public void testSumMaxAndMinIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(Integer.MAX_VALUE, Integer.MIN_VALUE) == -1);
 	}
 
@@ -90,7 +90,37 @@ public class CalculatorTest {
 	public void testSubtrOfTwoNegativeIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.subtr(int1Neg, int2Neg) == 10);
 	}
+	
+	@Test
+	public void testSubtrOfOnePositiveAndOneNegativeIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.subtr(int1Pos, int1Neg) == 20);
+	}
+	
+	@Test
+	public void testSubtrOfOneNegativeAndOnePositiveIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.subtr(int1Neg, int1Pos) == -20);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testSubrtMaxOfMaxGivesException() {
+		assertTrue(testCalculator.subtr(Integer.MAX_VALUE, Integer.MAX_VALUE) != 0);
+	}
+	
+	@Test
+	public void testSubtrZeroOfZeroIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.subtr(intZero, intZero) == 0);
+	}
+	
+	@Test
+	public void testSubtrZeroOfNegativeIsOk() throws ArithmeticException {
+		assertTrue(testCalculator.subtr(int1Neg, intZero) == -10);
+	}
 
+	@Test
+	public void testSubrtMaxOfMMinIsOk() {
+		assertTrue(testCalculator.subtr(Integer.MIN_VALUE, Integer.MAX_VALUE) < 0);
+	}
+	
 	/**
 	 * Test public method div
 	 */
