@@ -28,7 +28,7 @@ public class CalculatorTest {
 	int int1Neg = -10;
 	int int2Neg = -20;
 
-	int intZero = 0
+	int intZero = 0;
 	
 	/**
 	 * Test public method sum
@@ -68,7 +68,7 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void testDivOfPositiveByPositiveUnexpectArithmethicException() throws java.lang.ArithmeticException {
+	public void testDivOfPositiveByPositiveUnexpectArithmethicException() throws ArithmeticException {
 		testCalculator.div(int1Pos, int2Pos);
 	}
 
