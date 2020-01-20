@@ -116,6 +116,11 @@ public class CalculatorTest {
 		assertTrue(testCalculator.subtr(int1Neg, intZero) == -10);
 	}
 
+	@Test
+	public void testSubrtMaxOfMMinIsOk() {
+		assertTrue(testCalculator.subtr(Integer.MIN_VALUE, Integer.MAX_VALUE) < 0);
+	}
+	
 	/**
 	 * Test public method div
 	 */
