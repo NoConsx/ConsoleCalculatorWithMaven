@@ -20,4 +20,8 @@ public class Calculator {
 	public int div(int val1, int val2) {
 		return val1 / val2;
 	}
+
+	protected double sqrt(int val1) {
+		return Math.sqrt(val1);
+	}
 }
