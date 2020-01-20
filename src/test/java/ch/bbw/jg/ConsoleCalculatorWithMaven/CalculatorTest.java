@@ -49,9 +49,15 @@ public class CalculatorTest {
 	public void testSubtrOfTwoNegativeIsOk() {
 		assertTrue(testCalculator.subtr(int1Neg, int2Neg) == 10);
 	}
-	
+
+	@Test(expected = ArithmeticException.class)
+	public void testDivOfPositiveByZeroThrowsExpectArithmethicException() {
+		testCalculator.div(int1Pos, intZero);
+	}
+
 	@Test
-	public void testDivOfTwoPositiveIsOk() {
-		assertTrue(testCalculator.div(int1Pos, int2Pos) == 0.5);
-	}	
+	public void testDivOfPositiveByPositiveUnexpectArithmethicException() throws java.lang.ArithmeticException {
+		testCalculator.div(int1Pos, int2Pos);
+	}
+
 }
