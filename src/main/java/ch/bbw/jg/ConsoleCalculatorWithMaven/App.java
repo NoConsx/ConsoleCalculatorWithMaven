@@ -61,5 +61,10 @@ public class App
        System.out.println("Sqrt "  + valueA + " = " + calculator.sqrt(valueA));
        System.out.println("========================================================================");
        System.out.println("");
+       
+       System.out.println("========================================================================");
+       System.out.println("Mult "  + valueA + " * " + valueB + " = " + calculator.mult(valueA, valueB));
+       System.out.println("========================================================================");
+       System.out.println("");
     }
 }

@@ -24,4 +24,8 @@ public class Calculator {
 	protected double sqrt(int val1) {
 		return Math.sqrt(val1);
 	}
+
+	int mult(int val1, int val2) {
+		return Math.multiplyExact(val1, val2);
+	}
 }
