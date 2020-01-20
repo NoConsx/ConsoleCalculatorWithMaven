@@ -116,7 +116,7 @@ public class CalculatorTest {
 		assertTrue(testCalculator.subtr(int1Neg, intZero) == -10);
 	}
 
-	@Test
+	@Test(expected = AssertionError.class)
 	public void testSubrtMaxOfMMinIsOk() {
 		assertTrue(testCalculator.subtr(Integer.MIN_VALUE, Integer.MAX_VALUE) < 0);
 	}
@@ -126,13 +126,38 @@ public class CalculatorTest {
 	 */
 
 	@Test(expected = ArithmeticException.class)
-	public void testDivOfPositiveByZeroThrowsExpectArithmethicException() {
+	public void testDivOfPositiveByZeroThrowsExpectedArithmethicException() {
 		testCalculator.div(int1Pos, intZero);
+	}
+	
+	@Test(expected = ArithmeticException.class)
+	public void testDivOfNegativeByZeroThrowsExpectedArithmethicException() {
+		testCalculator.div(int1Neg, intZero);
+	}
+	
+	@Test(expected = ArithmeticException.class)
+	public void testDivOfZeroByZeroThrowsExpectedArithmethicException() {
+		testCalculator.div(intZero, intZero);
 	}
 
 	@Test
 	public void testDivOfPositiveByPositiveUnexpectArithmethicException() throws ArithmeticException {
 		testCalculator.div(int1Pos, int2Pos);
+	}
+	
+	@Test
+	public void testDivONegativeByNegativeisOk() throws ArithmeticException {
+		testCalculator.div(int2Neg, int1Neg);
+	}
+	
+	@Test
+	public void testDivMAXAndPositiveIsOk() {
+		assertTrue(testCalculator.div(Integer.MAX_VALUE, 100) == 21474826);
+	}
+	
+	@Test
+	public void testDivMAXAndnegativeIsOk() {
+		assertTrue(testCalculator.div(Integer.MAX_VALUE, -100) == -21474826);
 	}
 
 	/**
