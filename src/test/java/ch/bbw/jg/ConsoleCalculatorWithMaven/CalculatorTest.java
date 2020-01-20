@@ -2,6 +2,9 @@ package ch.bbw.jg.ConsoleCalculatorWithMaven;
 
 import static org.junit.Assert.*;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 import org.junit.Before;
 
 /**
@@ -88,5 +91,27 @@ public class CalculatorTest {
 	@Test
 	public void testPackageProtectedMultMethodWithPositive() {
 		testCalculator.mult(int1Pos, int2Pos);
+	}
+
+	/**
+	 * Test private method pow
+	 */
+
+	@Test
+	public void testPrivatedPowMethodWithPositive() {
+		/**
+		 * I do not unit test private methods. A private method is an implementation
+		 * detail that should be hidden to the users of the class. Testing private
+		 * methods breaks encapsulation.
+		 * 
+		 * I could also implement a reflection to test private methods:
+		 * 
+		 * https://github.com/gk2go/dp4j/wiki/Testscript
+		 * 
+		 * If I don't want to implement this reflection and I find that the private
+		 * method is complex or important enough to require its own tests, I just put it
+		 * in another class and make it public there
+		 * 
+		 */
 	}
 }
