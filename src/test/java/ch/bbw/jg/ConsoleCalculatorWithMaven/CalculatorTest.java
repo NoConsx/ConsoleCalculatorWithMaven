@@ -154,6 +154,11 @@ public class CalculatorTest {
 	public void testDivMAXAndPositiveIsOk() {
 		assertTrue(testCalculator.div(Integer.MAX_VALUE, 100) == 21474826);
 	}
+	
+	@Test
+	public void testDivMAXAndnegativeIsOk() {
+		assertTrue(testCalculator.div(Integer.MAX_VALUE, -100) == -21474826);
+	}
 
 	/**
 	 * Test protected method sqrt
