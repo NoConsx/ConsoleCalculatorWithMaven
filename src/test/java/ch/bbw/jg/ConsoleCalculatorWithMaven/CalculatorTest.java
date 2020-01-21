@@ -41,12 +41,12 @@ public class CalculatorTest {
 	public void testSumOfTwoPositiveIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(int1Pos, int2Pos) == 30);
 	}
-	
+
 	@Test
 	public void testSumOfTwoNegativeIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(int1Neg, int2Neg) == -30);
 	}
-	
+
 	@Test
 	public void testSumOfOneNegativeOnePositiveIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(int1Neg, int1Pos) == 0);
@@ -56,22 +56,22 @@ public class CalculatorTest {
 	public void testSumOfOnePositiveOneNegativeIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(int1Pos, int1Neg) == 0);
 	}
-	
+
 	@Test
 	public void testSumOfZeroAndNegativeIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(intZero, int1Neg) == -10);
 	}
-	
+
 	@Test
 	public void testSumOfZeroAndPositiveIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(intZero, int1Pos) == 10);
 	}
-	
+
 	@Test(expected = AssertionError.class)
 	public void testSumMaxAndMaxGivesException() {
 		assertTrue(testCalculator.sum(Integer.MAX_VALUE, Integer.MAX_VALUE) == 1200);
 	}
-	
+
 	@Test
 	public void testSumMaxAndMinIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.sum(Integer.MAX_VALUE, Integer.MIN_VALUE) == -1);
@@ -90,27 +90,27 @@ public class CalculatorTest {
 	public void testSubtrOfTwoNegativeIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.subtr(int1Neg, int2Neg) == 10);
 	}
-	
+
 	@Test
 	public void testSubtrOfOnePositiveAndOneNegativeIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.subtr(int1Pos, int1Neg) == 20);
 	}
-	
+
 	@Test
 	public void testSubtrOfOneNegativeAndOnePositiveIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.subtr(int1Neg, int1Pos) == -20);
 	}
-	
+
 	@Test(expected = AssertionError.class)
 	public void testSubrtMaxOfMaxGivesException() {
 		assertTrue(testCalculator.subtr(Integer.MAX_VALUE, Integer.MAX_VALUE) != 0);
 	}
-	
+
 	@Test
 	public void testSubtrZeroOfZeroIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.subtr(intZero, intZero) == 0);
 	}
-	
+
 	@Test
 	public void testSubtrZeroOfNegativeIsOk() throws ArithmeticException {
 		assertTrue(testCalculator.subtr(int1Neg, intZero) == -10);
@@ -120,7 +120,7 @@ public class CalculatorTest {
 	public void testSubrtMaxOfMMinIsOk() {
 		assertTrue(testCalculator.subtr(Integer.MIN_VALUE, Integer.MAX_VALUE) < 0);
 	}
-	
+
 	/**
 	 * Test public method div
 	 */
@@ -129,12 +129,12 @@ public class CalculatorTest {
 	public void testDivOfPositiveByZeroThrowsExpectedArithmethicException() {
 		testCalculator.div(int1Pos, intZero);
 	}
-	
+
 	@Test(expected = ArithmeticException.class)
 	public void testDivOfNegativeByZeroThrowsExpectedArithmethicException() {
 		testCalculator.div(int1Neg, intZero);
 	}
-	
+
 	@Test(expected = ArithmeticException.class)
 	public void testDivOfZeroByZeroThrowsExpectedArithmethicException() {
 		testCalculator.div(intZero, intZero);
@@ -144,25 +144,25 @@ public class CalculatorTest {
 	public void testDivOfPositiveByPositiveUnexpectArithmethicException() throws ArithmeticException {
 		testCalculator.div(int1Pos, int2Pos);
 	}
-	
+
 	@Test
 	public void testDivNegativeByNegativeisOk() throws ArithmeticException {
 		testCalculator.div(int2Neg, int1Neg);
 	}
-	
+
 	@Test
 	public void testDivMAXAndPositiveIsOk() {
 		assertTrue(testCalculator.div(Integer.MAX_VALUE, 1) == 2147483647);
 	}
-	
+
 	@Test
 	public void testDivMAXAndNegativeIsOk() {
 		assertTrue(testCalculator.div(Integer.MAX_VALUE, -1) == -2147483647);
 	}
-	
+
 	@Test
 	public void testDivPositiveAndNegativeIsOk() {
-		assertTrue(testCalculator.div(int1Pos, int1Neg ) == -1);
+		assertTrue(testCalculator.div(int1Pos, int1Neg) == -1);
 	}
 
 	/**
@@ -181,6 +181,46 @@ public class CalculatorTest {
 	@Test
 	public void testPackageProtectedMultMethodWithPositive() throws ArithmeticException {
 		testCalculator.mult(int1Pos, int2Pos);
+	}
+
+	@Test
+	public void testMultPositiveByNegative() throws ArithmeticException {
+		testCalculator.mult(int1Pos, int1Neg);
+	}
+
+	@Test
+	public void testMultNegativeByNegative() throws ArithmeticException {
+		testCalculator.mult(int1Neg, int2Neg);
+	}
+
+	@Test
+	public void testMultNegativeByPositive() throws ArithmeticException {
+		testCalculator.mult(int1Neg, int1Pos);
+	}
+
+	@Test
+	public void testMultNegativeByZero() throws ArithmeticException {
+		testCalculator.mult(int1Neg, intZero);
+	}
+
+	@Test
+	public void testMultPositiveByZero() throws ArithmeticException {
+		testCalculator.mult(int1Neg, intZero);
+	}
+
+	@Test
+	public void testMultZeroByZero() throws ArithmeticException {
+		testCalculator.mult(intZero, intZero);
+	}
+
+	@Test
+	public void testMultZeroByPositive() throws ArithmeticException {
+		testCalculator.mult(intZero, int1Pos);
+	}
+
+	@Test
+	public void testMultZeroByNegativee() throws ArithmeticException {
+		testCalculator.mult(intZero, int1Neg);
 	}
 
 	/**
