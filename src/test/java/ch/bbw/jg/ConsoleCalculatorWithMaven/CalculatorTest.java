@@ -146,7 +146,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void testDivONegativeByNegativeisOk() throws ArithmeticException {
+	public void testDivNegativeByNegativeisOk() throws ArithmeticException {
 		testCalculator.div(int2Neg, int1Neg);
 	}
 	
